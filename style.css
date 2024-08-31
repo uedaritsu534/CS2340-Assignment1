@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure bubbles don't overflow */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #68b0f8, #3cb1ff, #006bb3, #3cb1ff, #68b0f8);
+    background-size: 100% 400%; /* Extended size for smooth animation */
+    animation: ocean 15s infinite linear; /* Longer duration for smoother loop */
+    overflow: hidden;
+    z-index: -1; /* Place background behind bubbles */
+}
+
+
+.bubble {
+    position: absolute;
+    bottom: -100px; 
+    bottom: -50px;
+    width: 100px;  /* Increased size */
+    height: 100px; /* Increased size */
+    background-color: rgba(173, 216, 230, 0.7);
+    border-radius: 50%;
+    animation: rise 5s infinite ease-in;
+}
+
+.bubble:nth-child(2) {
+    left: 20%;
+    width: 90px;  /* Increased size */
+    height: 90px; /* Increased size */
+    animation-duration: 7s;
+}
+
+.bubble:nth-child(3) {
+    left: 40%;
+    width: 60px;  /* Increased size */
+    height: 60px; /* Increased size */
+    animation-duration: 4s;
+}
+
+.bubble:nth-child(4) {
+    left: 60%;
+    width: 70px;  /* Increased size */
+    height: 70px; /* Increased size */
+    animation-duration: 6s;
+}
+
+.bubble:nth-child(5) {
+    left: 80%;
+    width: 55px;  /* Increased size */
+    height: 55px; /* Increased size */
+    animation-duration: 8s;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1); /* Start at normal size */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.3); /* Shrink as it rises */
+        opacity: 0;
+    }
+}
+
+@keyframes ocean {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%; /* Move the gradient to simulate water movement */
+    }
+}
+
+.button {
+    position: fixed;
+    top: 30px; /* Distance from the top */
+    left: 30px; /* Distance from the left */
+    padding: 10px 20px;
+    background-color: #ffeb66;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+    z-index: 20; /* Ensure it is above the box */
+}
+
+.button.no-shadow {
+    box-shadow: none; /* Remove shadow */
+}
+
+
+.button:hover {
+    background-color: #d0b502; /* Slightly darker on hover */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translate(-6px, -5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.box {
+    position: fixed;
+    top: 30px; /* Align with the button's top position */
+    left: 30px; /* Align with the button's left position */
+    width: 0; /* Start with zero width */
+    height: 0; /* Start with zero height */
+    background-color: #ffeb66; /* Same yellow as the button */
+    color: #000;
+    border: none;
+    border-radius: 5px; /* Match the button's border radius */
+    transform-origin: top left; /* Expand from the top-left corner */
+    z-index: 10; /* Ensure it appears below the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden; /* Hide content that overflows */
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Clip to zero initially */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+.box.expand {
+    animation: expand 0.5s forwards, float 3s ease-in-out infinite; /* Apply the expanding animation */
+}
+
+.box.collapse {
+    animation: collapse 0.5s forwards, float 3s ease-in-out infinite; /* Apply the collapsing animation */
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+        height: 0;
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Clip to zero */
+    }
+    to {
+        width: calc(100% - 50px); /* Full width minus the button position */
+        height: calc(33vh); /* Target height when expanded */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Clip to full size */
+    }
+}
+
+@keyframes collapse {
+    from {
+        width: calc(100% - 50px); /* Full width minus the button position */
+        height: calc(33vh); /* Target height when expanded */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Clip to full size */
+    }
+    to {
+        width: 0; /* Return to zero width */
+        height: 0; /* Return to zero height */
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Clip to zero */
+    }
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px; /* Adjust size as needed */
+    color: #fff; /* White text for contrast against the ocean background */
+    font-weight: bold;
+    display: flex;
+    gap: 5px; /* Space between letters */
+    z-index: 5; /* Ensure it's above other elements */
+}
+
+.letter {
+    display: inline-block;
+    animation: sway 4s ease-in-out infinite; /* Adjusted duration for a smooth loop */
+}
+
+/* Define sway animations */
+@keyframes sway {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(15px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.letter:nth-child(1) {
+    animation-delay: 0s; /* First letter animation */
+}
+
+.letter:nth-child(2) {
+    animation-delay: 0.1s; /* Second letter animation */
+}
+
+.letter:nth-child(3) {
+    animation-delay: 0.2s; /* Third letter animation */
+}
+
+.letter:nth-child(4) {
+    animation-delay: 0.3s; /* Fourth letter animation */
+}
+
+.letter:nth-child(5) {
+    animation-delay: 0.4s; /* Fifth letter animation */
+}
+
+.horizontal-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust height as needed */
+    background: #fada9e;
+    color: #000000; /* Text color if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15; /* Ensure it is above other content */
+}
+/* Example text styling inside the box, if needed */
+.horizontal-box p {
+    margin: 0;
+    font-size: 16px;
+}

@@ -38,6 +38,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const box = document.getElementById('box');
+    const button = document.querySelector('.button');
+    let isOpen = false;
+
+    button.addEventListener('click', function() {
+        if (isOpen) {
+            box.style.height = '0';
+            box.querySelector('.box-content').style.opacity = '0';
+            button.textContent = 'Open';
+        } else {
+            box.style.height = '300px'; /* Adjust height as needed */
+            box.querySelector('.box-content').style.opacity = '1';
+            button.textContent = 'Close';
+        }
+        isOpen = !isOpen;
+    });
+});
+
 document.addEventListener("scroll", function() {
     const scrollTextBox = document.getElementById('scrollTextBox');
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;

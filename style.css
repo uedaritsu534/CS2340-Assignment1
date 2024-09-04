@@ -140,13 +140,16 @@ body {
     transform-origin: top left; /* Expand from the top-left corner */
     z-index: 10; /* Ensure it appears below the button */
     display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     font-size: 24px;
     font-weight: bold;
     overflow: hidden; /* Hide content that overflows */
     clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Clip to zero initially */
     animation: float 3s ease-in-out infinite; /* Floating animation */
+    
 }
 .box.expand {
     animation: expand 0.5s forwards, float 3s ease-in-out infinite; /* Apply the expanding animation */
@@ -321,4 +324,19 @@ body {
     z-index: 1000; /* Ensure it stays above other elements */
     transition: color 0.3s; /* Only transition text color */
     font-size: 30px;
+}
+.box-button {
+    width: 100px;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f2b700; /* A darker yellow for buttons */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.box-button:hover {
+    background-color: #e0a800; /* Slightly darker yellow on hover */
 }

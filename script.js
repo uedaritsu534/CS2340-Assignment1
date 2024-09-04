@@ -76,3 +76,12 @@ document.addEventListener("scroll", function() {
         scrollTextBox.style.color = "#ffeb66"; /* Yellow text color */
     }
 });
+
+function scrollToPictureBox(id) {
+    const pictureBox = document.getElementById(id);
+    if (pictureBox) {
+        pictureBox.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error(`Element with id "${id}" not found.`);
+    }
+}

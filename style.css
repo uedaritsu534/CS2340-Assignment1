@@ -143,7 +143,7 @@ body {
     flex-direction: row; /* Align buttons horizontally */
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around; /* Space out buttons evenly */
     font-size: 24px;
     font-weight: bold;
     overflow: hidden; /* Hide content that overflows */
@@ -326,7 +326,7 @@ body {
     font-size: 30px;
 }
 .box-button {
-    width: 100px;
+    width: autox;
     padding: 10px;
     margin: 5px 0;
     background-color: #f2b700; /* A darker yellow for buttons */

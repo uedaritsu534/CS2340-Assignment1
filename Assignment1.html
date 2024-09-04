@@ -13,10 +13,10 @@
     <button class="button">Menu</button>
     <div class="box" id="box">
         <div class="box-content">
-            <button class="box-button">Button 1</button>
-            <button class="box-button">Button 2</button>
-            <button class="box-button">Button 3</button>
-            <button class="box-button">Button 4</button>
+            <button class="box-button" onclick="scrollToPictureBox('picture-box')">Explore Sunlight Zone</button>
+            <button class="box-button" onclick="scrollToPictureBox('picture-box-1')">Explore Twilight Zone</button>
+            <button class="box-button" onclick="scrollToPictureBox('picture-box-2')">Explore Midnight Zone</button>
+            <button class="box-button">URL to CSS</button>
         </div>
     </div>
     <div id="box" class="box"></div>
@@ -28,7 +28,7 @@
         <span class="letter">n</span>
     </div>
 
-    <div class="picture-box">
+    <div class="picture-box" id="picture-box">
         <img src="Images/White_shark.jpg" class="picture">
         <div class="text-box">White Shark</div>
     </div>
@@ -38,7 +38,7 @@
         <div class="text-box">Spotted Porcupine Fish</div>
     </div>
     
-    <div class="picture-box location2">
+    <div class="picture-box location2" id="picture-box-1">
         <img src="Images/EUO-©-OCEANA-Juan-Cuetos-71509-1.jpg" class="picture">
         <div class="text-box">Common Octopus</div>
     </div>
@@ -48,7 +48,7 @@
         <div class="text-box">Mauve Stinger</div>
     </div>
 
-    <div class="picture-box location4">
+    <div class="picture-box location4" id="picture-box-2">
         <img src="Images/anglerfish.webp" class="picture">
         <div class="text-box">Angler Fish</div>
     </div>

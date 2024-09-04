@@ -4,8 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    height: 600vh;
+    /*overflow: hidden;*/
     overflow-x: hidden;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -31,7 +31,7 @@ body {
 
 
 .bubble {
-    position: absolute;
+    position: fixed;
     bottom: -100px; 
     bottom: -50px;
     width: 100px;  /* Increased size */
@@ -256,4 +256,69 @@ body {
 .horizontal-box p {
     margin: 0;
     font-size: 16px;
+}
+.picture-box {
+    width: 450px; /* Set the width of the picture box */
+    height: autpx; /* Set the height of the picture box */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d4b887; /* Sand-like color for the box background */
+    border: 5px solid #d4b887; /* Border color for the picture box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 120vh; /* Position it below the initial viewport height */
+    border-radius: 10px;
+    flex-direction: column;
+    font-size: large;
+}
+
+.picture-box img {
+    padding-bottom: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ensure the image covers the box area */
+    border-radius: 5px; /* Add rounded corners to the image */
+}
+
+.location1 {
+    top: 180vh;
+    width: 400px;
+}
+
+.location2 {
+    top: 300vh;
+    width: 500px;
+}
+
+.location3 {
+    top: 360vh;
+    width: 500px;
+}
+
+.location4 {
+    top: 480vh;
+    width: 500px;
+}
+
+.location5 {
+    top: 540vh;
+    width: 500px;
+}
+
+.scroll-text-box {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: transparent; /* Make the background transparent */
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: none; /* Remove shadow since there's no background */
+    z-index: 1000; /* Ensure it stays above other elements */
+    transition: color 0.3s; /* Only transition text color */
+    font-size: 30px;
 }

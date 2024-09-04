@@ -37,3 +37,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener("scroll", function() {
+    const scrollTextBox = document.getElementById('scrollTextBox');
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (window.scrollY / maxScroll) * 100;
+
+    if (scrollPercent < 5) {
+        scrollTextBox.textContent = "Explore the Ocean!";
+        scrollTextBox.style.color = "white";
+    } else if (scrollPercent >= 5 && scrollPercent < 35) {
+        scrollTextBox.textContent = "Sunlight Zone";
+        scrollTextBox.style.color = "white"; 
+    } else if (scrollPercent >= 35 && scrollPercent < 75) {
+        scrollTextBox.textContent = "Twilight Zone";
+        scrollTextBox.style.color = "white"; /* Yellow text color */
+    } else {
+        scrollTextBox.textContent = "Midnight Zone";
+        scrollTextBox.style.color = "#ffeb66"; /* Yellow text color */
+    }
+});

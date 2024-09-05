@@ -1,1 +1,1 @@
-# CS2340-Assignment1
+# LMC2700-Assignment1

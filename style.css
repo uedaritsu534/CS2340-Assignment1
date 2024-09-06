@@ -149,7 +149,6 @@ body {
     overflow: hidden; /* Hide content that overflows */
     clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Clip to zero initially */
     animation: float 3s ease-in-out infinite; /* Floating animation */
-    
 }
 .box.expand {
     animation: expand 0.5s forwards, float 3s ease-in-out infinite; /* Apply the expanding animation */

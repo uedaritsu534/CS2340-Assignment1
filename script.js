@@ -76,7 +76,6 @@ document.addEventListener("scroll", function() {
         scrollTextBox.style.color = "#ffeb66"; /* Yellow text color */
     }
 });
-
 function scrollToPictureBox(id) {
     const pictureBox = document.getElementById(id);
     if (pictureBox) {
